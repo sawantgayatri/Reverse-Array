@@ -1,0 +1,45 @@
+include<stdio.h>
+void reverse(int arr[],int size)
+{
+    int temp;
+    for (int i=0; i < size / 2; i++)
+
+    {
+        temp = arr[i];
+
+        arr[i] = arr[size - 1 - i];
+
+        arr[size - 1 - i] = temp;
+    }
+}
+int main(void)
+{
+    int arr[100], size;
+
+    printf("Enter Size: ");
+
+    scanf("%d", &size);
+
+    printf("Enter Array elements:\n");   
+
+    for (int i=0; i < size; i++)
+
+    {
+        scanf("%d", &arr[i]);    
+ 	}
+    printf("Original Array : ");
+
+    for (int i=0; i < size; i++)
+
+    {
+        printf("%-4d \n", arr[i]);
+    }
+
+    printf("Reversed Array : ");  
+    reverse(arr, size);
+    for (int i=0; i < size; i++) 
+    {
+        printf("%-4d", arr[i]);
+    }
+        return 0;
+}
